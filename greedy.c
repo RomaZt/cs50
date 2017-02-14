@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    int coinsReturned = 0;
+    int coins = 0;
     
     printf("How much change is owed? \n");
     float change = GetFloat();
@@ -14,31 +14,31 @@ int main(void)
     }
     
     // round amount to 2 decimals and
-    // convert entirely to cents (float -> int)
+    // convert entirely to cents (float to int)
     int amount =  round(change * 100);
     
     while (amount > 0) {
         if ((amount - 25) >= 0) 
         { 
             amount = amount - 25;
-            coinsReturned++;
+            coins++;
         }
         else if ((amount - 10) >= 0) 
         { 
             amount = amount - 10; 
-            coinsReturned++;
+            coins++;
         }
         else if ((amount - 5) >= 0)
         { 
             amount = amount - 5; 
-            coinsReturned++;
+            coins++;
         }
         else if ((amount - 1) >= 0) 
         { 
             amount = amount - 1; 
-            coinsReturned++;
+            coins++;
         }
     }
     
-    printf("%d\n", coinsReturned);
+    printf("%d\n", coins);
 }
